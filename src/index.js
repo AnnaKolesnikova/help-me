@@ -1,5 +1,8 @@
 function count(s, pairs) {
   const prod = pairs.reduce((mul, [p]) => p * mul, 1);
+  if (prod > 100000000) {
+    return 0;
+  }
   const arr = Array(prod).fill('1');
   pairs.forEach(([p]) => {
     const d = prod / p;
